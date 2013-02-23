@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Eliminacion de usuarios</title>                
+        <style type="text/css">
+            body {background-image: url("resources/images/fondo.jpg");
+                padding-top: 60px; font-family: arial; margin: 0; }                
+            header{ padding-left: 26%;}            
+            a { text-decoration: none; color:blue; }
+            nav ul{padding-left: 10px; padding-left: 15%;}
+            nav ul li{
+                float: left;  
+                margin-left: 10px;
+                font-size: large;                    
+                padding-left: 10px;
+            }
+            section {
+                padding-top: 5%;
+                padding-left: 23%;
+            }
+            aside{
+                float: left;  
+                margin-left: 10px;
+                font-size: large;                                        
+                top:20px;
+                position: absolute;
+            }
+            footer {
+                position: fixed;
+                bottom: 0;
+                background: black;
+                width: 100%;
+                height: 60px;
+                color:white;
+            }        
+        </style>
+    </h:head>       
+    <header><h1>Eliminación de usuarios</h1></header>
+    <ui:insert name="content">        
+        <nav>
+            <ul>
+                <li> <h:outputLink value="./userConsult.xhtml">Consultar usuarios</h:outputLink></li>
+                <li> <h:outputLink value="./userEdit.xhtml">Actualizar usuarios</h:outputLink></li>
+                <li> <h:outputLink value="./userCreate.xhtml">Crear usuarios</h:outputLink></li>
+                <li> <h:outputLink value="./userDelete.xhtml">Elimininar usuarios</h:outputLink></li>
+            </ul>
+        </nav>  
+        <section>
+            <h:form>            
+                <p:growl id="growl" showDetail="true"/>
+                <p:panel id="user_consult_info" header="Datos de búsqueda" style="width: 450px; background-color: rgba(90, 132, 195, 0.5);
+                         background: rgba(90, 132, 195, 0.5); color: rgba(90, 132, 195, 0.5);">
+                    <h:panelGrid columns="2">
+                        <h:outputLabel for="userName" value="Nombre:" style="font-weight:bold"/>
+                        <p:inputText id="userName" required="true" label="Nombre del usuario">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl userName" />
+                        </p:inputText>                        
+                        <p:commandButton type="submit" value="Buscar" style="color: #133D0E;width:110px; height:50px;font-size:18px;" />
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>    
+        </section>    
+        <aside>
+            <h:outputLink value="./index.xhtml">volver</h:outputLink>
+        </aside>
+        <footer>
+            <h6>(C) 2013, Funcadión Social Oasis</h6>
+        </footer>
+    </ui:insert>
+</ui:composition>
