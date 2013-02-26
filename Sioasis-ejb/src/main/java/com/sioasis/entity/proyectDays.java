@@ -4,13 +4,13 @@
  */
 package com.sioasis.entity;
 
-import com.google.code.morphia.annotations.Embedded;
+import com.google.code.morphia.annotations.Entity;
 
 /**
  *
  * @author darthian
  */
-@Embedded
+@Entity
 public class proyectDays {
     
     private int hourBegin;

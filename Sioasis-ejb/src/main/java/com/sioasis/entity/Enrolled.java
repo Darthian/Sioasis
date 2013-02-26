@@ -4,15 +4,16 @@
  */
 package com.sioasis.entity;
 
-import com.google.code.morphia.annotations.Embedded;
+import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
+import com.google.code.morphia.annotations.Reference;
 import org.bson.types.ObjectId;
 
 /**
  *
  * @author darthian
  */
-@Embedded
+@Entity
 public class Enrolled {
 
     @Id
@@ -40,7 +41,7 @@ public class Enrolled {
     private String grade;
     private String tipeOwnHome; //Arriendo, Propia, en Pago
     private String tipeHome;    //Casa, Apartamento, Casalote, Inquilinato, Invacion, 
-    @Embedded
+    @Reference
     private Guardian guardian;
     private int numChild17;
     private Long docID;

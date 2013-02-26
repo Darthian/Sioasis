@@ -4,8 +4,9 @@
  */
 package com.sioasis.entity;
 
-import com.google.code.morphia.annotations.Embedded;
+import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
+import com.google.code.morphia.annotations.Reference;
 import java.util.List;
 import org.bson.types.ObjectId;
 
@@ -13,7 +14,7 @@ import org.bson.types.ObjectId;
  *
  * @author darthian
  */
-@Embedded
+@Entity
 public class Project {
 
     @Id
@@ -21,9 +22,9 @@ public class Project {
     private String nameProject;
     private String attendant;
     private String description;
-    @Embedded
+    @Reference
     private List<Enrolled> enrolled;
-    @Embedded
+    @Reference
     private List<Schedule> schedule;
     private Long code;
     private String duration;

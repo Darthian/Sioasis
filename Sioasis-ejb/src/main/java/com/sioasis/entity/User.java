@@ -4,9 +4,9 @@
  */
 package com.sioasis.entity;
 
-import com.google.code.morphia.annotations.Embedded;
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
+import com.google.code.morphia.annotations.Reference;
 import org.bson.types.ObjectId;
 
 /**
@@ -24,7 +24,7 @@ public class User {
     private Long docNumber;
     private String realName;
     private String lastName;
-    @Embedded
+    @Reference
     private Project projects;
 
     public String getUserName() {

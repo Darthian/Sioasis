@@ -4,7 +4,7 @@
  */
 package com.sioasis.entity;
 
-import com.google.code.morphia.annotations.Embedded;
+import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
 import org.bson.types.ObjectId;
 
@@ -12,7 +12,7 @@ import org.bson.types.ObjectId;
  *
  * @author darthian
  */
-@Embedded
+@Entity
 public class Guardian {
 
     @Id
