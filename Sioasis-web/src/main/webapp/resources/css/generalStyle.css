@@ -1,0 +1,49 @@
+/* 
+    Document   : sioStyle
+    Created on : 26/02/2013, 10:58:32 AM
+    Author     : darthian
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+body {
+    background-image: url("fondo.jpg");
+    padding-top: 60px; font-family: arial; margin: 0; 
+} 
+section {
+    padding-top: 5%;
+    padding-left: 30%;
+}
+header{ 
+    padding-left: 33%;
+}            
+a { 
+    text-decoration: none; color:blue; 
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    background: black;
+    width: 100%;
+    height: 60px;
+    color:white;
+}    
+aside{
+    float: left;  
+    margin-left: 10px;
+    font-size: large;                                        
+    top:20px;
+    position: absolute;
+}   
+nav ul{
+    padding-left: 20%;
+}
+nav ul li{
+    float: left;  
+    margin-left: 10px;
+    font-size: large;                    
+    padding-left: 10px;
+}
