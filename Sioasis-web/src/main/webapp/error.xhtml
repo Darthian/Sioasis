@@ -10,9 +10,52 @@
             <title>Error</title>
             <link rel="shortcut icon" href="resources/images/favicon.ico"/>
             <link rel="StyleSheet" href="resources/css/generalStyle.css" type="text/css"/>
+            <style type="text/css">
+                .caja{
+                    padding-top: 5%;
+                    padding-left: 20%;  
+                    width:10px;
+                    height:20px;
+                    background:white;
+                    color:#009ff5;;
+                    position:relative;
+                    font-weight:900;
+                    font-size:48px;
+                    padding-left:100px;
+                    margin:10px;
+                    animation:animado 10s 1;
+                    -moz-animation:animado 10s 1;
+                    -webkit-animation:animado 10s 1;
+                    border-radius:150px;
+                    -webkit-border-radius:150px;
+                    text-shadow: 5px 5px 5px cyan;
+                    text-align: justify;
+                }
+
+                @keyframes animado
+                {
+                    0%    	{-webkit-transform: rotate(0deg);left:0px;}
+                25%		{-webkit-transform: rotate(75deg);left:0px;}
+                50%		{-webkit-transform: rotate(0deg);left:50px;padding-top:0px;}
+                65%		{-webkit-transform: rotate(-25deg);left:50px;background:white;padding-top:20px;}
+                75%		{-webkit-transform: rotate(-45deg);left:50px;background:white;padding-top:100px;}
+                100%	{-webkit-transform: rotate(-360deg);left:0px;padding-top:30px;}
+                }
+
+                @-webkit-keyframes animado
+                {
+                    0%		{-webkit-transform: rotate(0deg);left:0px;}
+                25%		{-webkit-transform: rotate(75deg);left:0px;}
+                50%		{-webkit-transform: rotate(0deg);left:50px;padding-top:0px;}
+                65%		{-webkit-transform: rotate(-25deg);left:50px;background:white;padding-top:20px;}
+                75%		{-webkit-transform: rotate(-45deg);left:50px;background:white;padding-top:100px;}
+                100%	{-webkit-transform: rotate(-360deg);left:0px;padding-top:30px;}
+                }
+            </style>
         </h:head>
         <ui:insert name="content">
-            <header><h1>Error de inicio de sesión, verifica tu contraseña y nombre de usuario.</h1></header>            
+            <header><h1>Error de inicio de sesión.</h1></header>
+            <div class="caja">¡Verifica tu contraseña y nombre de usuario!</div>
             <aside>
                 <h:outputLink value="./login.xhtml">volver</h:outputLink>                
             </aside>

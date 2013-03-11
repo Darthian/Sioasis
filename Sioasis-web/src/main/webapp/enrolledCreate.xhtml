@@ -22,153 +22,153 @@
             </ul>
         </nav>
         <section>           
-                <h:form>            
-                    <p:growl id="growl" showDetail="true"/>
-                    <p:panel id="enrolled_create_info" header="Datos de creación" style="width: 800px; background-color: rgba(90, 132, 195, 0.5);
-                             background: rgba(90, 132, 195, 0.5); color: rgba(90, 132, 195, 0.5);">
-                        <h:panelGrid columns="4">
-                            
-                            <h:outputLabel for="enrolledName" value="Nombre:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledName" value="#{insertionEnrolled.name}" required="true" label="Nombre del matriculado">
-                                <f:validateLength maximum="20" minimum="3"/>
-                                <f:validator validatorId="alphabeticValidator"/>
-                                <p:ajax event="blur"  update="growl enrolledName" />
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledLastName" value="Apellido:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledLastName" value="#{insertionEnrolled.lastName}" required="true" label="Apellido del matriculado">
-                                <f:validateLength maximum="20" minimum="3"/>
-                                <f:validator validatorId="alphabeticValidator"/>
-                                <p:ajax event="blur"  update="growl enrolledLastName" />
-                            </p:inputText>         
-                             <h:outputLabel for="enrolledSex" value="Sexo:" style="font-weight:bold"/>
-                             <p:inputText id="enrolledSex" value="#{insertionEnrolled.sex}" required="true" label="Sexo del matriuclado">                            
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledAge" value="Edad:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledAge" value="#{insertionEnrolled.age}" required="true" label="Edad del matriculado">                            
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledBirthDay" value="Fecha de nacimiento:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledBirthDay" value="#{insertionEnrolled.birthDay}" required="true" label="Fecha de nacimiento del matriculado">                            
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledDocID" value="Documento del matriculado:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledDocID" value="#{insertionEnrolled.docID}" required="true" label="Documento del matriculado">
-                                <f:validateLength maximum="20" minimum="3"/>
-                                <f:validator validatorId="alphabeticValidator"/>
-                                <p:ajax event="blur"  update="growl enrolledDocID" />
-                            </p:inputText> 
-                            
-                            <h:outputLabel for="enrolledWeight" value="Peso:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledWeight" value="#{insertionEnrolled.weight}" required="true" label="Peso del matriculado">
-                                <f:validateLength maximum="20" minimum="3"/>
-                                <f:validator validatorId="alphabeticValidator"/>
-                                <p:ajax event="blur"  update="growl enrolledWeight" />
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledHeight" value="Altura:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledHeight" value="#{insertionEnrolled.height}" required="true" label="Altura del matriculado">
-                                <f:validateLength maximum="20" minimum="3"/>
-                                <f:validator validatorId="alphabeticValidator"/>
-                                <p:ajax event="blur"  update="growl enrolledHeight" />
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledSizeHeight" value="Talla:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledSizeHeight" value="#{insertionEnrolled.sizeHeight}" required="true" label="Talla del matriculado">
-                                <f:validateLength maximum="20" minimum="3"/>
-                                <f:validator validatorId="alphabeticValidator"/>
-                                <p:ajax event="blur"  update="growl enrolledSizeHeight" />
-                            </p:inputText> 
-                            
-                            <h:outputLabel for="enrolledStudy" value="¿Estudia actualmente?:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledStudy" value="#{insertionEnrolled.study}" required="true" label="¿Study?">                            
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledGrade" value="Grado:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledGrade" value="#{insertionEnrolled.grade}" required="true" label="Grado del matriculado">
-                                <f:validateLength maximum="20" minimum="3"/>
-                                <f:validator validatorId="alphabeticValidator"/>
-                                <p:ajax event="blur"  update="growl enrolledGrade" />
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledSchool" value="Institución:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledSchool" value="#{insertionEnrolled.school}" required="true" label="Institución donde estudia el matriculadp">
-                                <f:validateLength maximum="20" minimum="3"/>
-                                <f:validator validatorId="alphabeticValidator"/>
-                                <p:ajax event="blur"  update="growl enrolledSchool" />
-                            </p:inputText>                             
-                            
-                            <h:outputLabel for="enrolledGuardianDocID" value="Documento del acudiente:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledGuardianDocID" value="#{insertionEnrolled.docIDGuardian}" required="true" label="Documento del acudiente del matriculado">
-                                <f:validateLength maximum="20" minimum="3"/>
-                                <f:validator validatorId="alphabeticValidator"/>
-                                <p:ajax event="blur"  update="growl enrolledGuardianDocID" />
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledGuardian" value="Nombre del acudiente:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledGuardian" value="#{insertionEnrolled.guardianName}" required="true" label="Nombre del acudiente del matriculado">
-                                <f:validateLength maximum="20" minimum="3"/>
-                                <f:validator validatorId="alphabeticValidator"/>
-                                <p:ajax event="blur"  update="growl enrolledGuardian" />
-                            </p:inputText> 
-                            
-                            <h:outputLabel for="enrolledRelationGuardian" value="Parentesco del acudiente:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledRelationGuardian" value="#{insertionEnrolled.relationGuardian}" required="true" label="Parentesco del acudiente">                            
-                            </p:inputText>                             
-                            <h:outputLabel for="enrolledGuardianJob" value="Ocupación del acudiente:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledGuardianJob" value="" required="true" label="Ocupación del acudiente">
-                                <f:validateLength maximum="20" minimum="3"/>
-                                <f:validator validatorId="alphabeticValidator"/>
-                                <p:ajax event="blur"  update="growl enrolledGuardianJob" />
-                            </p:inputText>                             
-                            <h:outputLabel for="enrolledGuardianPhone" value="Teléfono móvil del acudiente:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledGuardianPhone" value="" required="true" label="Teléfono móvil del acudiente">
-                                <f:validateLength maximum="20" minimum="3"/>
-                                <f:validator validatorId="alphabeticValidator"/>
-                                <p:ajax event="blur"  update="growl enrolledGuardianPhone" />
-                            </p:inputText> 
-                            
-                            <h:outputLabel for="enrolledAddress" value="Dirección:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledAddress" value="" required="true" label="Direccion de matriculado">
-                                <f:validateLength maximum="20" minimum="3"/>
-                                <f:validator validatorId="alphabeticValidator"/>
-                                <p:ajax event="blur"  update="growl enrolledAddress" />
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledHomePhone" value="Teléfono fijo:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledHomePhone" value="" required="true" label="Telefono fijo de matriculado">
-                                <f:validateLength maximum="20" minimum="3"/>
-                                <f:validator validatorId="alphabeticValidator"/>
-                                <p:ajax event="blur"  update="growl enrolledHomePhone" />
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledTipeOwnHome" value="Tipo propiedad de vivienda:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledTipeOwnHome" value="" required="true" label="Tipo propiedad de vivienda del matriculado">                            
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledTipeHome" value="Tipo de vivienda:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledTipeHome" value="" required="true" label="Tipo de vivienda de matriculado">                        
-                            </p:inputText> 
-                            
-                            <h:outputLabel for="enrolledWichEPS" value="EPS:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledWichEPS" value="" required="true" label="EPS del matriculado">                            
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledDisplaced" value="¿Es desplazado?:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledDisplaced" value="" required="true" label="¿Desplazado?">                            
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledSisben" value="¿Esta afiliado al Sisben?:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledSisben" value="" required="true" label="¿Sisben?">                            
-                            </p:inputText> 
-                            <h:outputLabel for="enrolledEPS" value="¿Esta afiliado a una EPS?:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledEPS" value="" required="true" label="¿EPS?">                            
-                            </p:inputText> 
-                            <h:outputLabel for="numPersonLive" value="Numero de personas con las que vive:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledPersonLive" value="" required="true" label="Numero de personas con las que vive">                            
-                            </p:inputText> 
-                            <h:outputLabel for="enrollednumChild17" value="Numero de personas menores de edad con las que vive:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledNumChild17" value="" required="true" label="Numero de personas menores de edad con las que vive">                            
-                            </p:inputText> 
-                            
-                            <h:outputLabel for="enrolledNewOrOld" value="¿Es nuevo?:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledNewOrOld" value="" required="true" label="¿New?">                            
-                            </p:inputText> 
-                            
-                            <h:outputLabel for="enrolledYearForm" value="Año en el que se realiza el formuario:" style="font-weight:bold"/>
-                            <p:inputText id="enrolledYearForm" value="" required="true" label="Año en el que se realiza el formuario">                            
-                            </p:inputText> 
-                            <p:commandButton type="submit" value="Crear" action="" style="color: #133D0E;width:110px; height:30px;font-size:15px;" />
-                        </h:panelGrid>
-                    </p:panel>
-                </h:form>             
+            <h:form>            
+                <p:growl id="growl" showDetail="true"/>
+                <p:panel id="enrolled_create_info" header="Datos de creación" style="width: 800px; background-color: rgba(90, 132, 195, 0.5);
+                         background: rgba(90, 132, 195, 0.5); color: rgba(90, 132, 195, 0.5);">
+                    <h:panelGrid columns="4">
+
+                        <h:outputLabel for="enrolledName" value="Nombre:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledName" value="#{insertionEnrolled.name}" required="true" label="Nombre del matriculado">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledName" />
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledLastName" value="Apellido:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledLastName" value="#{insertionEnrolled.lastName}" required="true" label="Apellido del matriculado">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledLastName" />
+                        </p:inputText>         
+                        <h:outputLabel for="enrolledSex" value="Sexo:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledSex" value="#{insertionEnrolled.sex}" required="true" label="Sexo del matriuclado">                            
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledAge" value="Edad:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledAge" value="#{insertionEnrolled.age}" required="true" label="Edad del matriculado">                            
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledBirthDay" value="Fecha de nacimiento:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledBirthDay" value="#{insertionEnrolled.birthDay}" required="true" label="Fecha de nacimiento del matriculado">                            
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledDocID" value="Documento del matriculado:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledDocID" value="#{insertionEnrolled.docID}" required="true" label="Documento del matriculado">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledDocID" />
+                        </p:inputText> 
+
+                        <h:outputLabel for="enrolledWeight" value="Peso:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledWeight" value="#{insertionEnrolled.weight}" required="true" label="Peso del matriculado">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledWeight" />
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledHeight" value="Altura:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledHeight" value="#{insertionEnrolled.height}" required="true" label="Altura del matriculado">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledHeight" />
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledSizeHeight" value="Talla:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledSizeHeight" value="#{insertionEnrolled.sizeHeight}" required="true" label="Talla del matriculado">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledSizeHeight" />
+                        </p:inputText> 
+
+                        <h:outputLabel for="enrolledStudy" value="¿Estudia actualmente?:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledStudy" value="#{insertionEnrolled.study}" required="true" label="¿Study?">                            
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledGrade" value="Grado:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledGrade" value="#{insertionEnrolled.grade}" required="true" label="Grado del matriculado">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledGrade" />
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledSchool" value="Institución:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledSchool" value="#{insertionEnrolled.school}" required="true" label="Institución donde estudia el matriculadp">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledSchool" />
+                        </p:inputText>                             
+
+                        <h:outputLabel for="enrolledGuardianDocID" value="Documento del acudiente:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledGuardianDocID" value="#{insertionEnrolled.docIDGuardian}" required="true" label="Documento del acudiente del matriculado">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledGuardianDocID" />
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledGuardian" value="Nombre del acudiente:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledGuardian" value="#{insertionEnrolled.guardianName}" required="true" label="Nombre del acudiente del matriculado">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledGuardian" />
+                        </p:inputText> 
+
+                        <h:outputLabel for="enrolledRelationGuardian" value="Parentesco del acudiente:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledRelationGuardian" value="#{insertionEnrolled.relationGuardian}" required="true" label="Parentesco del acudiente">                            
+                        </p:inputText>                             
+                        <h:outputLabel for="enrolledGuardianJob" value="Ocupación del acudiente:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledGuardianJob" value="" required="true" label="Ocupación del acudiente">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledGuardianJob" />
+                        </p:inputText>                             
+                        <h:outputLabel for="enrolledGuardianPhone" value="Teléfono móvil del acudiente:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledGuardianPhone" value="#{insertionEnrolled.movilPhoneGuardian}" required="true" label="Teléfono móvil del acudiente">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledGuardianPhone" />
+                        </p:inputText> 
+
+                        <h:outputLabel for="enrolledAddress" value="Dirección:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledAddress" value="#{insertionEnrolled.address}" required="true" label="Direccion de matriculado">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledAddress" />
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledHomePhone" value="Teléfono fijo:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledHomePhone" value="#{insertionEnrolled.homePhone}" required="true" label="Telefono fijo de matriculado">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledHomePhone" />
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledTipeOwnHome" value="Tipo propiedad de vivienda:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledTipeOwnHome" value="#{insertionEnrolled.tipeOwnHome}" required="true" label="Tipo propiedad de vivienda del matriculado">                            
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledTipeHome" value="Tipo de vivienda:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledTipeHome" value="#{insertionEnrolled.tipeHome}" required="true" label="Tipo de vivienda de matriculado">                        
+                        </p:inputText> 
+
+                        <h:outputLabel for="enrolledWichEPS" value="EPS:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledWichEPS" value="#{insertionEnrolled.wichEPS}" required="true" label="EPS del matriculado">                            
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledDisplaced" value="¿Es desplazado?:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledDisplaced" value="#{insertionEnrolled.displaced}" required="true" label="¿Desplazado?">                            
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledSisben" value="¿Esta afiliado al Sisben?:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledSisben" value="#{insertionEnrolled.sisben}" required="true" label="¿Sisben?">                            
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledEPS" value="¿Esta afiliado a una EPS?:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledEPS" value="#{insertionEnrolled.EPS}" required="true" label="¿EPS?">                            
+                        </p:inputText> 
+                        <h:outputLabel for="numPersonLive" value="Numero de personas con las que vive:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledPersonLive" value="#{insertionEnrolled.numPersonLive}" required="true" label="Numero de personas con las que vive">                            
+                        </p:inputText> 
+                        <h:outputLabel for="enrollednumChild17" value="Numero de personas menores de edad con las que vive:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledNumChild17" value="#{insertionEnrolled.numChild17}" required="true" label="Numero de personas menores de edad con las que vive">                            
+                        </p:inputText> 
+
+                        <h:outputLabel for="enrolledNewOrOld" value="¿Es nuevo?:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledNewOrOld" value="#{insertionEnrolled.newOrOld}" required="true" label="¿New?">                            
+                        </p:inputText> 
+
+                        <h:outputLabel for="enrolledYearForm" value="Año en el que se realiza el formuario:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledYearForm" value="#{insertionEnrolled.yearForm}" required="true" label="Año en el que se realiza el formuario">                            
+                        </p:inputText> 
+                        <p:commandButton type="submit" value="Crear" style="color: #133D0E;width:110px; height:30px;font-size:15px;" />
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>             
         </section>    
         <aside>
             <h:outputLink value="./login.xhtml">volver</h:outputLink>
