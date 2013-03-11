@@ -9,14 +9,14 @@
     <h:head>
         <title>Sioasis-login</title>
         <link rel="shortcut icon" href="resources/images/favicon.ico"/>
-        <link rel="StyleSheet" href="resources/css/generalStyle.css" type="text/css"/>
-    </h:head>       
-    <header><h1>Inicio de sesión Siosasis</h1></header>
-    <ui:insert name="content">        
+        <link rel="StyleSheet" href="resources/css/generalStyle.css" type="text/css"/>               
+    </h:head>           
+    <header><h1>Inicio de sesión Siosasis</h1></header>        
+    <ui:insert name="content" >        
         <section>
             <h:form>            
                 <p:growl id="growl" showDetail="true"/>
-                <p:panel id="login_info" header="Datos de ingreso" style="width: 450px; background-color: rgba(90, 132, 195, 0.5);
+                <p:panel id="login_info" header="Datos de ingreso" style="width: 800px; background-color: rgba(90, 132, 195, 0.5);
                          background: rgba(90, 132, 195, 0.5); color: rgba(90, 132, 195, 0.5);">
                     <h:panelGrid columns="2">
                         <h:outputLabel for="userName" value="Nombre de usuario:" style="font-weight:bold"/>
@@ -34,11 +34,11 @@
             </h:form>    
         </section>    
         <aside>
-            <h:outputLink value="http://www.socialoasis.org">FSO</h:outputLink>            
+            <h:outputLink value="./index.xhtml">Inicio</h:outputLink>            
         </aside>
         <footer>
             <h6>(C) 2013, Funcadión Social Oasis</h6>
-        </footer>
-    </ui:insert>
+        </footer>        
+    </ui:insert>    
 </ui:composition>
 

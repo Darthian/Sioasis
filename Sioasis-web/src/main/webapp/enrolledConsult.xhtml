@@ -24,9 +24,9 @@
         <section>
             <h:form>            
                 <p:growl id="growl" showDetail="true"/>
-                <p:panel id="enrolled_consult_info" header="Datos de búsqueda" style="width: 450px; background-color: rgba(90, 132, 195, 0.5);
+                <p:panel id="enrolled_consult_info" header="Datos de búsqueda" style="width: 800px; background-color: rgba(90, 132, 195, 0.5);
                          background: rgba(90, 132, 195, 0.5); color: rgba(90, 132, 195, 0.5);">
-                    <h:panelGrid columns="2">
+                    <h:panelGrid columns="3">
                         <h:outputLabel for="enrolledName" value="Nombre:" style="font-weight:bold"/>
                         <p:inputText id="enrolledName" required="true" label="Nombre de usuario">
                             <f:validateLength maximum="20" minimum="3"/>
@@ -39,7 +39,7 @@
             </h:form>    
         </section>    
         <aside>
-            <h:outputLink value="./index.xhtml">volver</h:outputLink>
+            <h:outputLink value="./login.xhtml">volver</h:outputLink>
         </aside>
         <footer>
             <h6>(C) 2013, Funcadión Social Oasis</h6>

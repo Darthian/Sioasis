@@ -7,6 +7,7 @@ package com.sioasis.entity;
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
 import com.google.code.morphia.annotations.Reference;
+import java.util.Date;
 import org.bson.types.ObjectId;
 
 /**
@@ -17,30 +18,31 @@ import org.bson.types.ObjectId;
 public class Enrolled {
 
     @Id
-    private ObjectId id;
-    private int yearForm;
-    private char sex;
-    private boolean newOrOld;
+    private ObjectId id;      
     private String name;
-    private String lastName;
-    private String age;
-    private String birthDay;
+    private String lastName;        
     private String address;
     private String homePhone;
     private String movilPhone;
     private String weight;
     private String height;
     private String sizeHeight;
-    private int numPersonLive;
-    private boolean displaced;
-    private boolean sisben;
-    private boolean EPS;
     private String wichEPS;
-    private boolean study;
     private String school;
     private String grade;
     private String tipeOwnHome; //Arriendo, Propia, en Pago
     private String tipeHome;    //Casa, Apartamento, Casalote, Inquilinato, Invacion, 
+    private Date birthDay;
+    private int yearForm;
+    private int age;
+    private int numPersonLive;
+    private char sex;      
+    private boolean displaced;
+    private boolean sisben;
+    private boolean EPS;    
+    private boolean study;
+    private boolean newOrOld;
+    
     @Reference
     private Guardian guardian;
     private int numChild17;
@@ -94,19 +96,19 @@ public class Enrolled {
         this.lastName = lastName;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public String getBirthDay() {
+    public Date getBirthDay() {
         return birthDay;
     }
 
-    public void setBirthDay(String birthDay) {
+    public void setBirthDay(Date birthDay) {
         this.birthDay = birthDay;
     }
 

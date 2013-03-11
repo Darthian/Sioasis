@@ -21,7 +21,7 @@ public class Guardian {
     private String name;
     private String job;
     private String movilPhone;
-    private String docID;
+    private Long docID;
 
     public ObjectId getId() {
         return id;
@@ -63,11 +63,11 @@ public class Guardian {
         this.movilPhone = movilPhone;
     }
 
-    public String getDocID() {
+    public Long getDocID() {
         return docID;
     }
 
-    public void setDocID(String docID) {
+    public void setDocID(Long docID) {
         this.docID = docID;
     }
 }
