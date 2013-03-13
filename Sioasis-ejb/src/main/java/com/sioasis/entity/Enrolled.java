@@ -45,6 +45,7 @@ public class Enrolled {
     
     @Reference
     private Guardian guardian;
+    
     private int numChild17;
     private Long docID;
 

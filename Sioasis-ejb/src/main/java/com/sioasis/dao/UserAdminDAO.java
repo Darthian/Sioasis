@@ -1,31 +1,25 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.sioasis.dao;
 
 import com.google.code.morphia.Datastore;
 import com.google.code.morphia.query.Query;
-import com.sioasis.entity.User;
+import com.sioasis.entity.userAdmin;
 import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import org.bson.types.ObjectId;
 
-/**
- *
- * @author darthian
- */
+
 @Stateless
 @LocalBean
-public class UserDao {
+public class UserAdminDAO {
 
     private Datastore ds = null;
 
-    public UserDao() {
+    public UserAdminDAO() {
     }
 
-    public UserDao(Datastore connection) throws Exception {
+    public UserAdminDAO(Datastore connection) throws Exception {
         this.ds = connection;
     }
 
@@ -33,7 +27,7 @@ public class UserDao {
         return ds;
     }
 
-    public User create(User u) throws Exception {
+    public userAdmin create(userAdmin u) throws Exception {
         try {
             ds.save(u);
             return u;
@@ -42,9 +36,9 @@ public class UserDao {
         }
     }
 
-    public void delete(User u) throws Exception {
+    public void delete(userAdmin u) throws Exception {
         try {
-            Query q = ds.createQuery(User.class).field("_id").equal(u.getId());
+            Query q = ds.createQuery(userAdmin.class).field("_id").equal(u.getId());
             ds.delete(q);
         } catch (Exception e) {
             throw e;
@@ -53,27 +47,27 @@ public class UserDao {
 
     public void delete(ObjectId id) throws Exception {
         try {
-            Query q = ds.createQuery(User.class).field("_id").equal(id);
+            Query q = ds.createQuery(userAdmin.class).field("_id").equal(id);
             ds.delete(q);
         } catch (Exception e) {
             throw e;
         }
     }
 
-    public List<User> findAll() throws Exception {
+    public List<userAdmin> findAll() throws Exception {
         try {
-            List<User> list = ds.find(User.class).asList();
+            List<userAdmin> list = ds.find(userAdmin.class).asList();
             return list;
         } catch (Exception e) {
             throw e;
         }
     }
 
-    public User findByUserName(String name) throws Exception {
-        User u;
+    public userAdmin findByUserName(String name) throws Exception {
+        userAdmin u;
         try {
-            Query q = ds.createQuery(User.class).field("userName").equal(name);
-            u = (User) q.get();
+            Query q = ds.createQuery(userAdmin.class).field("userName").equal(name);
+            u = (userAdmin) q.get();
         } catch (Exception e) {
             u = null;
             throw e;

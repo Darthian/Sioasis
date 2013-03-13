@@ -4,7 +4,10 @@
  */
 package com.sioasis.AccessController;
 
+import com.sioasis.controller.FactoryConnection;
 import com.sioasis.controller.InsertionController;
+import com.sioasis.dao.UserAdminDAO;
+import com.sioasis.entity.userAdmin;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -24,15 +27,14 @@ public class InsertControl {
     private InsertionController IC;
     private String userName;
     private String userPass;
-    private String rol;
     private Long docNumber;
     private String realName;
     private String lastName;
 
     public void insertMethod() throws Exception {
-        String flag = "index";
+        String flag = "index"; 
         try {
-            IC.dataInsert(getUserName(), getUserPass(), getRol(), getDocNumber(), getRealName(), getLastName());
+            IC.dataInsert1(getUserName(), getUserPass(), getDocNumber(), getRealName(), getLastName());
         } catch (Exception ex) {
             flag = "error";
         }
@@ -67,20 +69,6 @@ public class InsertControl {
      */
     public void setUserPass(String userPass) {
         this.userPass = userPass;
-    }
-
-    /**
-     * @return the rol
-     */
-    public String getRol() {
-        return rol;
-    }
-
-    /**
-     * @param rol the rol to set
-     */
-    public void setRol(String rol) {
-        this.rol = rol;
     }
 
     /**

@@ -5,7 +5,7 @@
 package com.sioasis.controller;
 
 import com.google.code.morphia.Datastore;
-import com.sioasis.entity.User;
+import com.sioasis.entity.userAdmin;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.*;
@@ -19,14 +19,14 @@ import org.junit.Test;
  */
 public class ConnectionFactoryTest {
 
-    static User user;
+    static userAdmin user;
 
     public ConnectionFactoryTest() {
     }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-        user = new User();
+        user = new userAdmin();
         user.setUserName("Yo");
         user.setUserPass("12345");
     }

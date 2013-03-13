@@ -39,12 +39,7 @@
                             
                         </p:password>
 
-                        <h:outputLabel for="rol" value="Rol:" style="font-weight: bold"/>
-                        <p:inputText id="rol" value="#{insertControl.rol}" required="true" label="rol">
-                            <f:validateLength maximum="15" minimum="3"/>
-                            <f:validator validatorId="alphabeticValidator"/>
-                            <p:ajax event="blur"  update="growl rol" />
-                        </p:inputText>
+                        
 
                         <h:outputLabel for="docNumber" value="Documento:" style="font-weight: bold"/>
                         <p:inputText id="docNumber" value="#{insertControl.docNumber}" required="true" label="documento" >

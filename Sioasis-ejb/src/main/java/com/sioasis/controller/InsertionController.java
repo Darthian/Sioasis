@@ -4,8 +4,8 @@
  */
 package com.sioasis.controller;
 
-import com.sioasis.dao.UserDao;
-import com.sioasis.entity.User;
+import com.sioasis.dao.UserAdminDAO;
+import com.sioasis.entity.userAdmin;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
@@ -17,18 +17,23 @@ import javax.ejb.Stateless;
 @LocalBean
 public class InsertionController {
 
-    public void dataInsert(String userName, String userPass, String rol, Long docNumber, String realName, String lastName) throws Exception {
+    public void dataInsert1(String userName, String userPass, Long docNumber, String realName, String lastName) throws Exception {
 
-        User u = new User();
+        userAdmin u = new userAdmin();
         u.setUserName(userName);
         u.setUserPass(userPass);
-        u.setRol(rol);
         u.setDocNumber(docNumber);
         u.setRealName(realName);
         u.setLastName(lastName);
-        UserDao userDao = new UserDao(FactoryConnection.getConnection(u));
+        
+        UserAdminDAO userDao = new UserAdminDAO(FactoryConnection.getConnection(u));
+        if(userDao.findByUserName(userName)!= null){
+            
+        }
+        else{
         userDao.create(u);
-
+        }
+        
     }
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")

@@ -4,6 +4,7 @@
  */
 package com.sioasis.entity;
 
+import com.google.code.morphia.annotations.Embedded;
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Id;
 import com.google.code.morphia.annotations.Reference;
@@ -24,7 +25,7 @@ public class Project {
     private String description;
     @Reference
     private List<Enrolled> enrolled;
-    @Reference
+    @Embedded
     private List<Schedule> schedule;
     private Long code;
     private String duration;

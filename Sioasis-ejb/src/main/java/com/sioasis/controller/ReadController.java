@@ -4,8 +4,8 @@
  */
 package com.sioasis.controller;
 
-import com.sioasis.dao.UserDao;
-import com.sioasis.entity.User;
+import com.sioasis.dao.UserAdminDAO;
+import com.sioasis.entity.userAdmin;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
@@ -19,10 +19,10 @@ public class ReadController {
 
     public String readMethod(String userName, String userPass) throws Exception {
         String flag = "error";
-        User u = new User();
-        UserDao userDao = new UserDao(FactoryConnection.getConnection(u));
+        userAdmin u = new userAdmin();
+        UserAdminDAO userDao = new UserAdminDAO(FactoryConnection.getConnection(u));
         try {
-            if (!userDao.findByUserName(userName).equals(null)) {
+            if (userDao.findByUserName(userName) != null) {
                 if (userDao.findByUserName(userName).getUserPass().equals(userPass)) {
                     flag = userDao.findByUserName(userName).getRol();                    
                 }
