@@ -1,24 +1,17 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package crudEnrolled;
 
+import com.sioasis.controllerEnrolled.CreateSessionEnrolled;
 import java.util.Date;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-/**
- *
- * @author darthian
- */
 @ManagedBean
 @RequestScoped
 public class InsertionEnrolled {
 
-    /**
-     * Creates a new instance of InsertionEnrolled
-     */           
+    @EJB
+    private CreateSessionEnrolled CSE;
     private String name;
     private String lastName;
     private String address;
@@ -35,24 +28,34 @@ public class InsertionEnrolled {
     private String relationGuardian; //Relationship to Enrollee: Mother, father..other..    
     private String jobGuardian;
     private String movilPhoneGuardian;
-    private String wichEPS;  
+    private String wichEPS;
     private Date birthDay;
-    private Long docIDGuardian;               
-    private Long docID;    
+    private Long docIDGuardian;
+    private Long docID;
     private boolean displaced;
     private boolean sisben;
-    private boolean EPS;    
+    private boolean EPS;
     private boolean study;
-    private boolean newOrOld;  
+    private boolean newOrOld;
     private char sex;
     private int age;
     private int numPersonLive;
     private int numChild17;
-    private int yearForm;    
-    
+    private int yearForm;
+
     public InsertionEnrolled() {
-    }   
-    
+    }
+
+    public void createEnrolledMethod() {
+        String flag = "index";
+        try {
+            CSE.newEnrolled(getName(), getLastName(), getAddress(), getHomePhone(), getMovilPhone(), getWeight(), getHeight(), getSizeHeight(), getSchool(), getGrade(), getTipeOwnHome(), getTipeHome(),
+                    getWichEPS(), getBirthDay(), getDocID(), isDisplaced(), isSisben(), isEPS(), isStudy(), isNewOrOld(), getSex(), getAge(), getNumPersonLive(), getNumChild17(), getYearForm());
+        } catch (Exception ex) {
+            flag = "error";
+        }
+    }
+
     /**
      * @return the yearForm
      */
@@ -447,6 +450,5 @@ public class InsertionEnrolled {
 
     public void setDocIDGuardian(Long docIDGuardian) {
         this.docIDGuardian = docIDGuardian;
-    }    
-    
+    }
 }

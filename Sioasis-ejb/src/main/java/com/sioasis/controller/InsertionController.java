@@ -28,7 +28,7 @@ public class InsertionController {
         
         UserAdminDAO userDao = new UserAdminDAO(FactoryConnection.getConnection(u));
         if(userDao.findByUserName(userName)!= null){
-            
+            //TO DO
         }
         else{
         userDao.create(u);

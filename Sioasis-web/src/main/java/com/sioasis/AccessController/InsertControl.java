@@ -4,10 +4,7 @@
  */
 package com.sioasis.AccessController;
 
-import com.sioasis.controller.FactoryConnection;
 import com.sioasis.controller.InsertionController;
-import com.sioasis.dao.UserAdminDAO;
-import com.sioasis.entity.userAdmin;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
