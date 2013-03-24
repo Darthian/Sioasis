@@ -40,97 +40,43 @@
                             <f:validator validatorId="alphabeticValidator"/>
                             <p:ajax event="blur"  update="growl enrolledLastName" />
                         </p:inputText>
+                        <h:outputLabel for="enrolledDocID" value="Documento del matriculado:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledDocID" value="#{insertionEnrolled.docID}" required="true" label="Documento del matriculado">
+                        </p:inputText> 
                         <h:outputLabel for="enrolledSex" value="Sexo:" style="font-weight:bold"/>
-                        <p:selectOneRadio id="enrolledSex" value="#{insertionEnrolled.sex}" required="true" layout="custom" label="Sexo del matriuclado">
+                        <p:selectOneRadio id="enrolledSex" value="#{insertionEnrolled.sex}" required="true" label="Sexo del matriuclado">
                             <f:selectItem itemLabel="Femenino" itemValue="f" />  
                             <f:selectItem itemLabel="Masculino" itemValue="m" />       
                         </p:selectOneRadio> 
                         <h:outputLabel for="enrolledAge" value="Edad:" style="font-weight:bold"/>
-                        <p:spinner id="enrolledAge" value="#{insertionEnrolled.age}" required="true" max="200" min="0" label="Edad del matriculado"/>
-
+                        <p:spinner id="enrolledAge" value="#{insertionEnrolled.age}" required="true" max="200" min="0" label="Edad del matriculado"/>                        
                         <h:outputLabel for="enrolledBirthDay" value="Fecha de nacimiento:" style="font-weight:bold"/>
-                        <p:calendar id="enrolledBirthDay" value="#{insertionEnrolled.birthDay}" required="true" label="Fecha de nacimiento del matriculado"/>
-
-                        <h:outputLabel for="enrolledDocID" value="Documento del matriculado:" style="font-weight:bold"/>
-                        <p:inputText id="enrolledDocID" value="#{insertionEnrolled.docID}" required="true" label="Documento del matriculado">
-                        </p:inputText> 
-
+                        <p:calendar id="enrolledBirthDay" showButtonPanel="true" navigator="true" value="#{insertionEnrolled.birthDay}" required="true" mindate="1/1/45" effect="explode" label="Fecha de nacimiento del matriculado"/>
                         <h:outputLabel for="enrolledWeight" value="Peso (en kilogramos):" style="font-weight:bold"/>
                         <p:spinner id="enrolledWeight" value="#{insertionEnrolled.weight}" required="true" max="200" min="11" label="Peso del matriculado"/>
-
-                        <h:outputLabel for="enrolledHeight" value="Altura:" style="font-weight:bold"/>
-                        <p:spinner id="enrolledHeight" value="#{insertionEnrolled.height}" required="true" max="300" min="50"  label="Altura del matriculado"/>
-
+                        <h:outputLabel for="enrolledHeight" value="Altura(en centímetros):" style="font-weight:bold"/>
+                        <p:spinner id="enrolledHeight" value="#{insertionEnrolled.height}" required="true" max="300" min="30"  label="Altura del matriculado"/>
                         <h:outputLabel for="enrolledSizeHeight" value="Talla:" style="font-weight:bold"/>
-                        <p:spinner id="enrolledSizeHeight" value="#{insertionEnrolled.sizeHeight}" required="true" min="2" max="16" label="Talla del matriculado"/>
-
+                        <p:inputText id="enrolledSizeHeight" value="#{insertionEnrolled.sizeHeight}" required="true" label="Talla del matriculado"/>
                         <h:outputLabel for="enrolledStudy" value="¿Estudia actualmente?:" style="font-weight:bold"/>
                         <p:selectOneRadio id="enrolledStudy" value="#{insertionEnrolled.study}" required="true" label="¿Study?">
                             <f:selectItem itemLabel="Si" itemValue="true" />  
                             <f:selectItem itemLabel="No" itemValue="false" />
                         </p:selectOneRadio> 
-                        <h:outputLabel for="enrolledGrade" value="Grado:" style="font-weight:bold"/>
-                        <p:spinner id="enrolledGrade" value="#{insertionEnrolled.grade}" required="true" min="0" max="11" label="Grado del matriculado"/>
-
+                        <h:outputLabel for="enrolledGrade" value="Grado o nivel de estudio:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledGrade" value="#{insertionEnrolled.grade}" required="true" label="Grado del matriculado"/>
                         <h:outputLabel for="enrolledSchool" value="Institución:" style="font-weight:bold"/>
                         <p:inputText id="enrolledSchool" value="#{insertionEnrolled.school}" required="true" label="Institución donde estudia el matriculadp">
                             <f:validateLength maximum="20" minimum="3"/>
                             <f:validator validatorId="alphabeticValidator"/>
                             <p:ajax event="blur"  update="growl enrolledSchool" />
-                        </p:inputText>                             
-
-                        <h:outputLabel for="enrolledGuardianDocID" value="Documento del acudiente:" style="font-weight:bold"/>
-                        <p:inputText id="enrolledGuardianDocID" value="#{insertionEnrolled.docIDGuardian}" required="false" label="Documento del acudiente del matriculado">
-                        </p:inputText> 
-                        <h:outputLabel for="enrolledGuardian" value="Nombre del acudiente:" style="font-weight:bold"/>
-                        <p:inputText id="enrolledGuardian" value="#{insertionEnrolled.guardianName}" required="false" label="Nombre del acudiente del matriculado">
-                            <f:validateLength maximum="20" minimum="3"/>
-                            <f:validator validatorId="alphabeticValidator"/>
-                            <p:ajax event="blur"  update="growl enrolledGuardian" />
-                        </p:inputText> 
-
-                        <h:outputLabel for="enrolledRelationGuardian" value="Parentesco del acudiente:" style="font-weight:bold"/>
-                        <p:selectOneMenu id="enrolledRelationGuardian" value="#{insertionEnrolled.relationGuardian}" required="false" label="Parentesco del acudiente">
-                            <f:selectItem itemLabel="Select One" itemValue="" />  
-                            <f:selectItem itemLabel="Abuela" itemValue="Abuela" />  
-                            <f:selectItem itemLabel="Abuelo" itemValue="Abuelo" />  
-                            <f:selectItem itemLabel="Mama" itemValue="Mama" /> 
-                            <f:selectItem itemLabel="Papa" itemValue="Papa" /> 
-                            <f:selectItem itemLabel="Tio" itemValue="Tio" /> 
-                            <f:selectItem itemLabel="Tia" itemValue="Tia" /> 
-                            <f:selectItem itemLabel="Hermana" itemValue="Hermana" /> 
-                            <f:selectItem itemLabel="Hermano" itemValue="Hermano" /> 
-                            <f:selectItem itemLabel="Prima" itemValue="Prima" /> 
-                            <f:selectItem itemLabel="Primo" itemValue="Primo" /> 
-                        </p:selectOneMenu>                
-
-                        <h:outputLabel for="enrolledGuardianJob" value="Ocupación del acudiente:" style="font-weight:bold"/>
-                        <p:inputText id="enrolledGuardianJob" value="" required="false" label="Ocupación del acudiente">
-                            <f:validateLength maximum="20" minimum="3"/>
-                            <f:validator validatorId="alphabeticValidator"/>
-                            <p:ajax event="blur"  update="growl enrolledGuardianJob" />
-                        </p:inputText>                             
-                        <h:outputLabel for="enrolledGuardianPhone" value="Teléfono móvil del acudiente:" style="font-weight:bold"/>
-                        <p:inputText id="enrolledGuardianPhone" value="#{insertionEnrolled.movilPhoneGuardian}" required="false" label="Teléfono móvil del acudiente">
-                        </p:inputText> 
-
+                        </p:inputText>  
                         <h:outputLabel for="enrolledAddress" value="Dirección:" style="font-weight:bold"/>
-                        <p:inputText id="enrolledAddress" value="#{insertionEnrolled.address}" required="true" label="Direccion de matriculado">
-                            <f:validateLength maximum="20" minimum="3"/>
-                            <f:validator validatorId="alphabeticValidator"/>
-                            <p:ajax event="blur"  update="growl enrolledAddress" />
+                        <p:inputText id="enrolledAddress" value="#{insertionEnrolled.address}" required="true" label="Direccion de matriculado">                            
                         </p:inputText> 
                         <h:outputLabel for="enrolledHomePhone" value="Teléfono fijo:" style="font-weight:bold"/>
                         <p:inputText id="enrolledHomePhone" value="#{insertionEnrolled.homePhone}" required="true" label="Telefono fijo de matriculado">
                         </p:inputText> 
-                        <h:outputLabel for="enrolledTipeOwnHome" value="Tipo propiedad de vivienda:" style="font-weight:bold"/>
-                        <p:selectOneMenu id="enrolledTipeOwnHome" value="#{insertionEnrolled.tipeOwnHome}" required="true" label="Tipo propiedad de vivienda del matriculado">
-                            <f:selectItem itemLabel="Select One" itemValue="" />  
-                            <f:selectItem itemLabel="Propia" itemValue="Propia" />  
-                            <f:selectItem itemLabel="En arriendo" itemValue="En arriendo" />  
-                            <f:selectItem itemLabel="Hipoteca" itemValue="Hipoteca" /> 
-                            <f:selectItem itemLabel="Propia en pago" itemValue="Propia en pago" /> 
-                        </p:selectOneMenu> 
                         <h:outputLabel for="enrolledTipeHome" value="Tipo de vivienda:" style="font-weight:bold"/>
                         <p:selectOneMenu id="enrolledTipeHome" value="#{insertionEnrolled.tipeHome}" required="true" label="Tipo de vivienda de matriculado">
                             <f:selectItem itemLabel="Select One" itemValue="" />  
@@ -140,7 +86,6 @@
                             <f:selectItem itemLabel="Inquilinato" itemValue="Inquilinato" /> 
                             <f:selectItem itemLabel="Invacion" itemValue="Invacion" /> 
                         </p:selectOneMenu> 
-
                         <h:outputLabel for="enrolledDisplaced" value="¿Es desplazado?:" style="font-weight:bold"/>
                         <p:selectOneRadio id="enrolledDisplaced" value="#{insertionEnrolled.displaced}" required="true" label="¿Desplazado?">
                             <f:selectItem itemLabel="Si" itemValue="true" />  
@@ -155,7 +100,7 @@
                         <p:selectOneRadio id="enrolledEPS" value="#{insertionEnrolled.EPS}" required="true" label="¿EPS?">
                             <f:selectItem itemLabel="Si" itemValue="true" />  
                             <f:selectItem itemLabel="No" itemValue="false" />
-                        </p:selectOneRadio> 
+                        </p:selectOneRadio>                         
                         <h:outputLabel for="enrolledWichEPS" value="EPS:" style="font-weight:bold"/>
                         <p:inputText id="enrolledWichEPS" value="#{insertionEnrolled.wichEPS}" required="true" label="EPS del matriculado">
                             <f:validateLength maximum="20" minimum="3"/>
@@ -173,10 +118,37 @@
                             <f:selectItem itemLabel="Si" itemValue="true" />  
                             <f:selectItem itemLabel="No" itemValue="false" />
                         </p:selectOneRadio> 
+                        <h:outputLabel for="enrolledYearForm" value="Fecha en que se realiza el formuario:" style="font-weight:bold"/>
+                        <p:calendar id="enrolledYearForm" value="#{insertionEnrolled.yearForm}" required="true" label="Año en el que se realiza el formuario"/>                        
+                        <!--                 
+                        <h:outputLabel for="enrolledGuardianDocID" value="Documento del acudiente:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledGuardianDocID" value="#{insertionEnrolled.docIDGuardian}" required="false" label="Documento del acudiente del matriculado">
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledGuardian" value="Nombre del acudiente:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledGuardian" value="#{insertionEnrolled.guardianName}" required="false" label="Nombre del acudiente del matriculado">
+                            <f:validateLength maximum="20" minimum="3"/>
+                            <f:validator validatorId="alphabeticValidator"/>
+                            <p:ajax event="blur"  update="growl enrolledGuardian" />
+                        </p:inputText> 
+                        <h:outputLabel for="enrolledRelationGuardian" value="Parentezco del acudiente:" style="font-weight:bold"/>
+                        <p:selectOneMenu id="enrolledRelationGuardian" value="#{insertionEnrolled.relationGuardian}" required="false" label="Parentesco del acudiente">
+                            <f:selectItem itemLabel="Select One" itemValue="" />  
+                            <f:selectItem itemLabel="Abuela" itemValue="Abuela" />  
+                            <f:selectItem itemLabel="Abuelo" itemValue="Abuelo" />  
+                            <f:selectItem itemLabel="Mama" itemValue="Mama" /> 
+                            <f:selectItem itemLabel="Papa" itemValue="Papa" /> 
+                            <f:selectItem itemLabel="Tio" itemValue="Tio" /> 
+                            <f:selectItem itemLabel="Tia" itemValue="Tia" /> 
+                            <f:selectItem itemLabel="Hermana" itemValue="Hermana" /> 
+                            <f:selectItem itemLabel="Hermano" itemValue="Hermano" /> 
+                            <f:selectItem itemLabel="Prima" itemValue="Prima" /> 
+                            <f:selectItem itemLabel="Primo" itemValue="Primo" /> 
+                        </p:selectOneMenu>                                                                
+                        <h:outputLabel for="enrolledGuardianPhone" value="Teléfono móvil del acudiente:" style="font-weight:bold"/>
+                        <p:inputText id="enrolledGuardianPhone" value="#{insertionEnrolled.movilPhoneGuardian}" required="false" label="Teléfono móvil del acudiente">
+                        </p:inputText>                         
+                        -->
 
-                        <h:outputLabel for="enrolledYearForm" value="Año en el que se realiza el formuario:" style="font-weight:bold"/>
-                        <p:calendar id="enrolledYearForm" value="#{insertionEnrolled.yearForm}" required="true" label="Año en el que se realiza el formuario"/>
-                        
                         <p:commandButton type="submit" value="Crear" action="#{insertionEnrolled.createEnrolledMethod()}" style="color: #133D0E;width:110px; height:30px;font-size:15px;" />
                     </h:panelGrid>
                 </p:panel>

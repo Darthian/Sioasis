@@ -23,7 +23,7 @@ public class CreateSessionEnrolled {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
-    public void newEnrolled(String name, String lastName, String address, String homePhone, String movilPhone, String weight, String height, String sizeHeight, String shcool, String grade, String tipeOwnHome, String tipeHome, String wichEPS, Date birthDay, Long docId, boolean displaced, boolean sisben, boolean EPS, boolean study, boolean newOrOld, char sex, int age, int numPersonLive, int numChild17, int yearForm) throws Exception {
+    public void newEnrolled(String name, String lastName, String address, String homePhone, String movilPhone, int weight, int height, String sizeHeight, String shcool, String grade, String tipeOwnHome, String tipeHome, String wichEPS, Date birthDay, Long docId, boolean displaced, boolean sisben, boolean EPS, boolean study, boolean newOrOld, char sex, int age, int numPersonLive, int numChild17, Date yearForm) throws Exception {
         Enrolled en = new Enrolled();
         en.setName(name);
         en.setLastName(lastName);
@@ -52,10 +52,12 @@ public class CreateSessionEnrolled {
         en.setYearForm(yearForm);
 
         EnrolledDAO enDao = new EnrolledDAO(FactoryConnection.getConnection(en));
-        enDao.create(en);
-        if (enDao.findByDocumentNumber(docId) == null) {
-            //TO DO
+        
+        if (enDao.findByDocumentNumber(docId) != null) {
+            System.out.println("El EJB de creacion Enrolled dice que ya existe");
         } else {
+            System.out.println("El EJB de creacion Enrolled dice que se creo");
+            enDao.create(en);
         }
     }
 

@@ -17,8 +17,6 @@ public class InsertionEnrolled {
     private String address;
     private String homePhone;
     private String movilPhone;
-    private String weight;
-    private String height;
     private String sizeHeight;
     private String school;
     private String grade;
@@ -38,35 +36,39 @@ public class InsertionEnrolled {
     private boolean study;
     private boolean newOrOld;
     private char sex;
+    private int weight;
+    private int height;
     private int age;
     private int numPersonLive;
     private int numChild17;
-    private int yearForm;
+    private Date yearForm;
 
-    public InsertionEnrolled() {
-    }
-
-    public void createEnrolledMethod() {
-        String flag = "index";
+    public String createEnrolledMethod() throws Exception {
+        String flag = "enrolledAdmin";
+        System.out.println("entro al managedBean de enrolled");
         try {
-            CSE.newEnrolled(getName(), getLastName(), getAddress(), getHomePhone(), getMovilPhone(), getWeight(), getHeight(), getSizeHeight(), getSchool(), getGrade(), getTipeOwnHome(), getTipeHome(),
+            getCSE().newEnrolled(getName(), getLastName(), getAddress(), getHomePhone(), getMovilPhone(), getWeight(), getHeight(), getSizeHeight(), getSchool(), getGrade(), getTipeOwnHome(), getTipeHome(),
                     getWichEPS(), getBirthDay(), getDocID(), isDisplaced(), isSisben(), isEPS(), isStudy(), isNewOrOld(), getSex(), getAge(), getNumPersonLive(), getNumChild17(), getYearForm());
         } catch (Exception ex) {
             flag = "error";
         }
+        return flag;
+    }
+
+    public InsertionEnrolled() {
     }
 
     /**
      * @return the yearForm
      */
-    public int getYearForm() {
+    public Date getYearForm() {
         return yearForm;
     }
 
     /**
      * @param yearForm the yearForm to set
      */
-    public void setYearForm(int yearForm) {
+    public void setYearForm(Date yearForm) {
         this.yearForm = yearForm;
     }
 
@@ -199,28 +201,28 @@ public class InsertionEnrolled {
     /**
      * @return the weight
      */
-    public String getWeight() {
+    public int getWeight() {
         return weight;
     }
 
     /**
      * @param weight the weight to set
      */
-    public void setWeight(String weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
     /**
      * @return the height
      */
-    public String getHeight() {
+    public int getHeight() {
         return height;
     }
 
     /**
      * @param height the height to set
      */
-    public void setHeight(String height) {
+    public void setHeight(int height) {
         this.height = height;
     }
 
@@ -450,5 +452,19 @@ public class InsertionEnrolled {
 
     public void setDocIDGuardian(Long docIDGuardian) {
         this.docIDGuardian = docIDGuardian;
+    }
+
+    /**
+     * @return the CSE
+     */
+    public CreateSessionEnrolled getCSE() {
+        return CSE;
+    }
+
+    /**
+     * @param CSE the CSE to set
+     */
+    public void setCSE(CreateSessionEnrolled CSE) {
+        this.CSE = CSE;
     }
 }

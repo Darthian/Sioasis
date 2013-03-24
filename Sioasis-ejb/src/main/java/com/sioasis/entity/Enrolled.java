@@ -23,9 +23,7 @@ public class Enrolled {
     private String lastName;        
     private String address;
     private String homePhone;
-    private String movilPhone;
-    private String weight;
-    private String height;
+    private String movilPhone;    
     private String sizeHeight;
     private String wichEPS;
     private String school;
@@ -33,7 +31,9 @@ public class Enrolled {
     private String tipeOwnHome; //Arriendo, Propia, en Pago
     private String tipeHome;    //Casa, Apartamento, Casalote, Inquilinato, Invacion, 
     private Date birthDay;
-    private int yearForm;
+    private Date yearForm;
+    private int weight;
+    private int height;
     private int age;
     private int numPersonLive;
     private char sex;      
@@ -57,11 +57,11 @@ public class Enrolled {
         this.id = id;
     }
 
-    public int getYearForm() {
+    public Date getYearForm() {
         return yearForm;
     }
 
-    public void setYearForm(int yearForm) {
+    public void setYearForm(Date yearForm) {
         this.yearForm = yearForm;
     }
 
@@ -137,19 +137,19 @@ public class Enrolled {
         this.movilPhone = movilPhone;
     }
 
-    public String getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(String weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
-    public String getHeight() {
+    public int getHeight() {
         return height;
     }
 
-    public void setHeight(String height) {
+    public void setHeight(int height) {
         this.height = height;
     }
 

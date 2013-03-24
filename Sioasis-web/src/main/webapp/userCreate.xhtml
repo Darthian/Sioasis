@@ -31,7 +31,7 @@
                         <p:inputText id="userName" value="#{insertControl.userName}" required="true" label="nomre de usuario">
                             <f:validateLength maximum="20" minimum="3"/>
                             <f:validator validatorId="alphabeticValidator"/>
-                            <p:ajax event="blur"  update="growl userName" />
+                            <p:ajax event="blur"  update="growl userName"/>
                         </p:inputText>
 
                         <h:outputLabel for="userPassword" value="Contraseña:" style="font-weight: bold"/>

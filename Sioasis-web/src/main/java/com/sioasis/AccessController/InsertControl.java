@@ -28,13 +28,15 @@ public class InsertControl {
     private String realName;
     private String lastName;
 
-    public void insertMethod() throws Exception {
-        String flag = "index"; 
+    public String insertMethod() throws Exception {
+        String flag = "userAdmin"; 
+        System.out.println("entro al managedBean del usuario");
         try {
             IC.dataInsert1(getUserName(), getUserPass(), getDocNumber(), getRealName(), getLastName());
         } catch (Exception ex) {
             flag = "error";
         }
+        return flag;
     }
 
     public InsertControl() {
